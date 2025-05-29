@@ -24,14 +24,11 @@ The project is organized into several key directories:
    - Poisson Loss (count data)
 
 2. **Rule Learning Approaches**:
-   - Gradient Boosting with Rules
-   - Mixed Integer Programming optimization
-   - Column Generation techniques
+   - Idealized Boosting and Fully-corrective Boosting with Rules implemented with MIP
+   - Additive rule ensembles with MIP optimization
 
 3. **Model Types**:
    - Additive Rule Ensembles
-   - Rule-based boosting
-   - XGBoost-inspired rule learning
 
 ## Installation
 
@@ -44,7 +41,7 @@ cd MIPRule
 pip install -r requirements.txt
 ```
 
-## Usage
+<!-- ## Usage
 
 ### Boosting Algorithm
 
@@ -102,7 +99,7 @@ results = evaluate_model(
     y_test,
     metrics=['accuracy', 'auc']
 )
-```
+``` -->
 
 ## Contributing
 
