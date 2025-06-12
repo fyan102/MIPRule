@@ -41,7 +41,7 @@ cd MIPRule
 pip install -r requirements.txt
 ```
 
-<!-- ## Usage
+## Usage
 
 ### Boosting Algorithm
 
@@ -65,7 +65,7 @@ risk, ensembles, bnd = fc_opt_boosting(n, d, k, L, U, train, train_target, label
                                       loss_func='squared', tl=600, reg=0.1, debug=False,
                                       f=None, max_col_num=10)
 ```
-->
+
 
 ## Contributing
 
