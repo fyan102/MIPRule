@@ -46,29 +46,13 @@ pip install -r requirements.txt
 ### Boosting Algorithm
 
 ```python
-from optimization.boosting_col2 import boosting_step2
+from optimization.boosting_col2 import rule_boosting2
 
 # Run boosting algorithm
-model = boosting_step2(
-    X_train,
-    y_train,
-    loss='squared',  # or 'logistic' for classification
-    num_rules=10
-)
-```
-
-### Fully-Corrective Boosting Algorithm
-
-```python
-from optimization.fc_boosting_col2 import fully_corrective2
-
-# Run fully-corrective boosting algorithm
-model = fully_corrective2(
-    X_train,
-    y_train,
-    loss='squared',  # or 'logistic' for classification
-    num_rules=10
-)
+ensemble, risk, bnd = rule_boosting2(
+                n, d, k, L, U, train, train_target, labels, 
+                loss_func='squared', tl=600, f=None, reg=0.1, debug=False,
+                max_col_num=10)
 ```
 
 ### MIP-based Rule Generation
@@ -77,29 +61,11 @@ model = fully_corrective2(
 from optimization.opt_fc_boosting2_col import optimized_rule_ensemble2
 
 # Run MIP-based rule generation
-model = optimized_rule_ensemble2(
-    X_train,
-    y_train,
-    loss='squared',  # or 'logistic' for classification
-    num_rules=10
-)
+risk, ensembles, bnd = fc_opt_boosting(n, d, k, L, U, train, train_target, labels,
+                                      loss_func='squared', tl=600, reg=0.1, debug=False,
+                                      f=None, max_col_num=10)
 ```
-
-## Evaluation
-
-The framework includes comprehensive evaluation tools:
-
-```python
-from evaluation.evaluate import evaluate_model
-
-# Evaluate model performance
-results = evaluate_model(
-    model,
-    X_test,
-    y_test,
-    metrics=['accuracy', 'auc']
-)
-``` -->
+->
 
 ## Contributing
 
